@@ -143,8 +143,12 @@ blockquote footer {
 
 #program {
   color: gray;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
+}
+
+#contact-table i {
+  font-size: 2rem;
 }
 
 iframe {
@@ -331,6 +335,12 @@ h3:after {
   height: 0.5em;
   border-top: 2px solid slategray;
   z-index: -1;
+}
+
+/* Right-align show all/hide all buttons in section headers */
+h4 .expander {
+  float: right;
+  text-transform: lowercase;
 }
 
 /* Format the footer ---------------------------------------------------------- */

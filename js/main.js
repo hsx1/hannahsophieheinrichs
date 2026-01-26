@@ -69,21 +69,19 @@ $(document).ready(function() {
      // });
 
      // open all accordion panels for possible printing or close
-   $(".expander").on("click", function() {
+  $(".expander").on("click", function() {
+    var $button = $(this);
+    var targets = $button.data("target");
+    var $panels = targets ? $(targets).find(".panel-collapse") : $(".panel-collapse");
+    var anyOpen = $panels.filter(".in").length > 0;
 
-      if ($(".expander").text() === "show all") {
-
-        // Change the button text
-         $(".expander").text("hide all");
-         // show all accordions
-         $(".panel-collapse").collapse('show');
-
-      } else {
-        // Change the button text
-         $(".expander").text("show all");
-         // hide all accordions
-         $(".panel-collapse").collapse('hide');
-      }
-   });
+    if (anyOpen) {
+      $button.text("show all");
+      $panels.collapse("hide");
+    } else {
+      $button.text("hide all");
+      $panels.collapse("show");
+    }
+  });
 
 });
